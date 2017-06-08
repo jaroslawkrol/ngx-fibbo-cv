@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {BasicTemplateComponent} from "./containers/basic-template/basic-template.component";
 
 const routes: Routes = [
   {
     path: '',
-    children: []
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: BasicTemplateComponent,
+    data: {
+      title: 'Home'
+    }
   }
 ];
 
