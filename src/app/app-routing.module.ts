@@ -13,7 +13,13 @@ const routes: Routes = [
     component: BasicTemplateComponent,
     data: {
       title: 'Home'
-    }
+    },
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
+      }
+    ]
   }
 ];
 

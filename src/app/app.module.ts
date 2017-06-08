@@ -13,6 +13,7 @@ import {EffectsModule} from "@ngrx/effects";
 import { BasicTemplateComponent } from './containers/basic-template/basic-template.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    DashboardModule,
     MaterialModule,
     BrowserAnimationsModule,
     // StoreModule.provideStore(fromRoot.reducer),
