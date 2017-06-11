@@ -1,0 +1,17 @@
+.dashboard {
+  height: 100%;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100% - 28px);
+}
+
+.icons-pair {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0;
+}

@@ -1,0 +1,10 @@
+.subheader {
+   min-height: 28px;
+   height: 28px;
+ }
+
+.subheader-title {
+  margin-top: -28px;
+  flex: 1 1 auto;
+  font-weight: lighter;
+}
