@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MdIconRegistry} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-footer',
@@ -9,14 +7,31 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class FooterComponent implements OnInit {
 
-  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'thumbs-up',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg')
-    );
+  constructor() {
   }
 
   ngOnInit() {
   }
 
+  stackoverflow() {
+    this.redirect(Redirect.STACKOVERFLOW);
+  }
+
+  linkedin() {
+    this.redirect(Redirect.LINKEDIN);
+  }
+
+  github() {
+    this.redirect(Redirect.GITHUB);
+  }
+
+  private redirect(url: string) {
+    window.location.href = url;
+  }
+}
+
+export class Redirect {
+   static STACKOVERFLOW = 'https://stackoverflow.com/users/6848233/jaroslaw-k';
+   static LINKEDIN = 'https://www.linkedin.com/in/jaros%C5%82aw-kr%C3%B3l-1b464211a/';
+   static GITHUB = 'https://github.com/jaroslawkrol';
 }

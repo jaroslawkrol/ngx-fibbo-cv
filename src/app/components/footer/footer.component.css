@@ -12,3 +12,11 @@
   text-align: center;
   flex: 1 1 auto;
 }
+
+.footer-icon > i {
+  padding: 5px 10px;
+}
+
+.footer-icon > i:hover {
+  color: #8aacc8;
+}
