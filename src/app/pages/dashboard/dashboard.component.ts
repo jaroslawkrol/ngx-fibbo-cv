@@ -26,6 +26,10 @@ export class DashboardComponent implements OnInit {
     this.navigateTo(Routing.SKILLS);
   }
 
+  toPersonalPage(): void {
+    this.navigateTo(Routing.PERSONAL);
+  }
+
   private navigateTo(route: string[]) {
     this.router.navigate(route);
   }
@@ -35,4 +39,5 @@ class Routing {
   static EDUCATION = ['/education'];
   static EXPERIENCE = ['/experience'];
   static SKILLS = ['/skills'];
+  static PERSONAL = ['/personal']
 }

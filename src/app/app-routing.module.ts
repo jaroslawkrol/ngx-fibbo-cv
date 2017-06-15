@@ -30,6 +30,10 @@ const routes: Routes = [
       {
         path: 'skills',
         loadChildren: './pages/skills/skills.module#SkillsModule',
+      },
+      {
+        path: 'personal',
+        loadChildren: './pages/personal/personal.module#PersonalModule',
       }
     ]
   }

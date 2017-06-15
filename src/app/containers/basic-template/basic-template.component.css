@@ -23,7 +23,7 @@
 
 .content {
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
   top: 56px;
   bottom: 100px;
   width: 100vw;
