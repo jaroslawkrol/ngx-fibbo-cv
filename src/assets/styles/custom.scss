@@ -16,3 +16,8 @@ $accent: mat-palette($mat-blue, 100);
 $theme: mat-light-theme($primary, $accent);
 
 @include angular-material-theme($theme);
+
+.mat-list-item-content {
+  height: 100% !important;
+  padding: 16px !important;
+}

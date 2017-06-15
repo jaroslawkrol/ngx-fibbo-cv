@@ -18,6 +18,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
+      },
+      {
+        path: 'education',
+        loadChildren: './pages/education/education.module#EducationModule',
       }
     ]
   }
