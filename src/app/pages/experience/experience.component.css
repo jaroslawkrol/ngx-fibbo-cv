@@ -1,0 +1,12 @@
+.text-wrapping {
+  white-space: pre-line !important;
+}
+
+.title {
+  font-weight: 600 !important;
+}
+
+.more-info {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}

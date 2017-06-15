@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path: 'education',
         loadChildren: './pages/education/education.module#EducationModule',
+      },
+      {
+        path: 'experience',
+        loadChildren: './pages/experience/experience.module#ExperienceModule',
       }
     ]
   }

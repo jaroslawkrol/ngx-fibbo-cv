@@ -18,11 +18,16 @@ export class DashboardComponent implements OnInit {
     this.navigateTo(Routing.EDUCATION);
   }
 
+  toExperiencePage(): void {
+    this.navigateTo(Routing.EXPERIENCE);
+  }
+
   private navigateTo(route: string[]) {
-    this.router.navigate(Routing.EDUCATION);
+    this.router.navigate(route);
   }
 }
 
 class Routing {
   static EDUCATION = ['/education'];
+  static EXPERIENCE = ['/experience'];
 }
