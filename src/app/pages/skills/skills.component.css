@@ -1,0 +1,20 @@
+.group-header {
+  height: auto;
+  padding: 10px 15px;
+  font-family: roboto;
+  font-weight: 400;
+  background: lightgray;
+}
+
+.text-wrapping {
+  white-space: pre-line !important;
+}
+
+.title {
+  font-weight: 600 !important;
+}
+
+.more-info {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}

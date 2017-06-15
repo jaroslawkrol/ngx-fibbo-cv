@@ -26,6 +26,10 @@ const routes: Routes = [
       {
         path: 'experience',
         loadChildren: './pages/experience/experience.module#ExperienceModule',
+      },
+      {
+        path: 'skills',
+        loadChildren: './pages/skills/skills.module#SkillsModule',
       }
     ]
   }

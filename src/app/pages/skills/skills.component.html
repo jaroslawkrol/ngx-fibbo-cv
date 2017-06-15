@@ -1,0 +1,29 @@
+<div class="education">
+  <app-subheader [title]="'Umiejętności'"></app-subheader>
+
+  <div *ngFor="let group of groups">
+    <div class="group-header">
+      <span>{{group.name}}</span>
+    </div>
+    <md-list>
+      <div *ngFor="let record of group.skills">
+        <md-list-item (click)="select(record)" style="height: 100%;">
+          <img md-list-avatar [src]="record.logo" alt="...">
+          <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
+            {{record.name}}
+          </h3>
+          <app-progress-bar md-line [level]="record.level"></app-progress-bar>
+          <div md-line *ngIf="record === selectedRecord">
+            <p class="more-info" [class.text-wrapping]="record === selectedRecord">
+              Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              rem aperiam eaque ipsa,
+            </p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+      </div>
+    </md-list>
+  </div>
+
+
+</div>
