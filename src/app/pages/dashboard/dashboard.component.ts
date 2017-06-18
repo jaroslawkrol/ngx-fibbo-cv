@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {Store} from '@ngrx/store';
+
+import * as routerActions from "../../actions/router.actions";
+import * as fromRoot from '../../reducers/root.reducer';
+import {Routing} from "../../utils/routing.util";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private store: Store<fromRoot.State>, private router: Router) {
   }
 
   ngOnInit() {
@@ -32,12 +37,6 @@ export class DashboardComponent implements OnInit {
 
   private navigateTo(route: string[]) {
     this.router.navigate(route);
+    this.store.dispatch(new routerActions.OtherPageAction());
   }
-}
-
-class Routing {
-  static EDUCATION = ['/education'];
-  static EXPERIENCE = ['/experience'];
-  static SKILLS = ['/skills'];
-  static PERSONAL = ['/personal']
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from "@ngrx/store";
+import * as fromRoot from '../../reducers/root.reducer';
+import {Observable} from "rxjs/Observable";
+
 
 @Component({
   selector: 'app-basic-template',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicTemplateComponent implements OnInit {
 
-  isProfileVisible = false;
+  isProfileVisible$: Observable<boolean>;
 
-  constructor() { }
+  constructor(private store: Store<fromRoot.State>) {
+    this.isProfileVisible$ = store.select(fromRoot.getLayoutProfileOpened);
+  }
 
   ngOnInit() {
   }

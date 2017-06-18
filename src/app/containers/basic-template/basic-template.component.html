@@ -5,4 +5,4 @@
   </div>
   <app-footer class="footer"></app-footer>
 </div>
-<app-about-me *ngIf="isProfileVisible"></app-about-me>
+<app-about-me *ngIf="isProfileVisible$ | async"></app-about-me>

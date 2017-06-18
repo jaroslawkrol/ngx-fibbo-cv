@@ -16,6 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 
+import * as fromRoot from './reducers/root.reducer';
+import {RouterEffects} from "./effects/router.effects";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +35,11 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
     DashboardModule,
     MaterialModule,
     BrowserAnimationsModule,
-    // StoreModule.provideStore(fromRoot.reducer),
+    StoreModule.provideStore(fromRoot.reducer),
     StoreDevtoolsModule.instrumentStore({
       maxAge: 5
     }),
-    // EffectsModule.run(CategoryEffects)
+    EffectsModule.run(RouterEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
