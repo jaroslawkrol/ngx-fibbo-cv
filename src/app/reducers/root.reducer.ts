@@ -7,15 +7,18 @@ import {createSelector} from 'reselect';
 
 import * as fromLayout from './layout.reducer';
 import * as fromRouter from './router.reducer';
+import * as fromEducation from './education.reducer';
 
 export interface State {
   layout: fromLayout.State;
   router: fromRouter.State;
+  education: fromEducation.State;
 }
 
 const reducers = {
   layout: fromLayout.reducer,
-  router: fromRouter.reducer
+  router: fromRouter.reducer,
+  education: fromEducation.reducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
@@ -36,3 +39,8 @@ export const getLayoutProfileOpened = createSelector(getLayoutState, fromLayout.
 export const getRouterState = (state: State) => state.router;
 
 export const getRouterIsHomepage = createSelector(getRouterState, fromRouter.getHomepage);
+
+export const getEducationState = (state: State) => state.education;
+
+export const getEducationSpinner = createSelector(getEducationState, fromEducation.getSpinner);
+export const getEducationRecords = createSelector(getEducationState, fromEducation.getEducationRecords);

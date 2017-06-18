@@ -2,7 +2,7 @@
   <app-subheader [title]="'Wykształcenie'"></app-subheader>
 
   <md-list>
-    <div *ngFor="let record of records">
+    <div *ngFor="let record of records$ | async">
       <md-list-item (click)="select(record)" style="height: 100%;">
         <img md-list-avatar [src]="record.logo" alt="...">
         <h2 md-line>
