@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicTemplateComponent implements OnInit {
 
+  isProfileVisible = false;
+
   constructor() { }
 
   ngOnInit() {

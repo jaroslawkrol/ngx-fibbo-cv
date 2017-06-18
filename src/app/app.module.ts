@@ -14,13 +14,15 @@ import { BasicTemplateComponent } from './containers/basic-template/basic-templa
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicTemplateComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
