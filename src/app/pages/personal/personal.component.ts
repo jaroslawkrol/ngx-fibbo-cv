@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PersonalRecord} from "../../models/personal-record";
+import {Observable} from "rxjs/Observable";
+import {Store} from "@ngrx/store";
+
+import * as fromRoot from '../../reducers/root.reducer';
 
 @Component({
   selector: 'app-personal',
@@ -8,15 +12,12 @@ import {PersonalRecord} from "../../models/personal-record";
 })
 export class PersonalComponent implements OnInit {
 
-  records: PersonalRecord[] = [
-    new PersonalRecord('Podróże', 1, 'xxx'),
-    new PersonalRecord('Rozwój', 2, 'xxx'),
-    new PersonalRecord('Muzyka', 3, 'xxx')
-  ];
+  records$: Observable<PersonalRecord[]>;
 
   selectedRecord: PersonalRecord = null;
 
-  constructor() {
+  constructor(store: Store<fromRoot.State>) {
+    this.records$ = store.select(fromRoot.getPersonalRecords);
   }
 
   ngOnInit() {

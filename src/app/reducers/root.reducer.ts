@@ -10,6 +10,7 @@ import * as fromRouter from './router.reducer';
 import * as fromEducation from './education.reducer';
 import * as fromExperience from './experience.reducer';
 import * as fromSkills from './skills.reducer';
+import * as fromPersonal from './personal.reducer';
 
 export interface State {
   layout: fromLayout.State;
@@ -17,6 +18,7 @@ export interface State {
   education: fromEducation.State;
   experience: fromExperience.State;
   skills: fromSkills.State;
+  personal: fromPersonal.State;
 }
 
 const reducers = {
@@ -24,7 +26,8 @@ const reducers = {
   router: fromRouter.reducer,
   education: fromEducation.reducer,
   experience: fromExperience.reducer,
-  skills: fromSkills.reducer
+  skills: fromSkills.reducer,
+  personal: fromPersonal.reducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
@@ -60,4 +63,9 @@ export const getSkillsState = (state: State) => state.skills;
 
 export const getSkillsSpinner = createSelector(getSkillsState, fromSkills.getSpinner);
 export const getSkillsGroup = createSelector(getSkillsState, fromSkills.getSkillsGroups);
+
+export const getPersonalState = (state: State) => state.personal;
+
+export const getPersonalSpinner = createSelector(getPersonalState, fromPersonal.getSpinner);
+export const getPersonalRecords = createSelector(getPersonalState, fromPersonal.getPersonalRecords);
 
