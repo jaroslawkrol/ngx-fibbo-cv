@@ -8,17 +8,20 @@ import {createSelector} from 'reselect';
 import * as fromLayout from './layout.reducer';
 import * as fromRouter from './router.reducer';
 import * as fromEducation from './education.reducer';
+import * as fromExperience from './experience.reducer';
 
 export interface State {
   layout: fromLayout.State;
   router: fromRouter.State;
   education: fromEducation.State;
+  experience: fromExperience.State;
 }
 
 const reducers = {
   layout: fromLayout.reducer,
   router: fromRouter.reducer,
-  education: fromEducation.reducer
+  education: fromEducation.reducer,
+  experience: fromExperience.reducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
@@ -44,3 +47,8 @@ export const getEducationState = (state: State) => state.education;
 
 export const getEducationSpinner = createSelector(getEducationState, fromEducation.getSpinner);
 export const getEducationRecords = createSelector(getEducationState, fromEducation.getEducationRecords);
+
+export const getExperienceState = (state: State) => state.experience;
+
+export const getExperienceSpinner = createSelector(getExperienceState, fromExperience.getSpinner);
+export const getExperienceRecords = createSelector(getExperienceState, fromExperience.getExperienceRecords);

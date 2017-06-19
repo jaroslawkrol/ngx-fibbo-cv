@@ -19,7 +19,7 @@ export class EducationEffects {
 
   @Effect()
   getEducationRecords$: Observable<Action> = this.actions$
-    .ofType(education.LOAD)
+    .ofType(education.EDU_LOAD)
     .startWith(new education.LoadAction())
     .switchMap(() => {
       return this.educationService.getRecords()

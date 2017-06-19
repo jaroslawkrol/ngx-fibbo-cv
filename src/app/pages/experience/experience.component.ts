@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ExperienceRecord} from "../../models/experience-record";
-import {EducationRecord} from "../../models/education-record";
+import {Store} from "@ngrx/store";
+import {Observable} from "rxjs/Observable";
+
+import * as fromRoot from '../../reducers/root.reducer'
 
 @Component({
   selector: 'app-experience',
@@ -9,16 +12,12 @@ import {EducationRecord} from "../../models/education-record";
 })
 export class ExperienceComponent implements OnInit {
 
-  records: ExperienceRecord[] = [
-    new ExperienceRecord('od 2016', 'JK Development', 1, 'xxx'),
-    new ExperienceRecord('od 2015', 'Execon ITS sp. z o.o.', 2, 'xxx'),
-    new ExperienceRecord('2013-2014', 'Centralny Ośrodek Informatyki', 3, 'xxx'),
-    new ExperienceRecord('2013-2013', 'Lacan Technologies', 4, 'xxx')
-  ];
+  records$: Observable<ExperienceRecord[]>;
 
-  selectedRecord: EducationRecord = null;
+  selectedRecord: ExperienceRecord = null;
 
-  constructor() {
+  constructor(store: Store<fromRoot.State>) {
+    this.records$ = store.select(fromRoot.getExperienceRecords);
   }
 
   ngOnInit() {
