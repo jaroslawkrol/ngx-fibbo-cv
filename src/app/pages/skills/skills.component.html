@@ -1,28 +1,36 @@
-<div class="skills">
+<div class="page skills">
   <app-subheader [title]="'Umiejętności'"></app-subheader>
 
-  <div *ngFor="let group of groups$ | async">
-    <div class="group-header">
-      <span>{{group.name}}</span>
-    </div>
-    <md-list>
-      <div *ngFor="let record of group.skills">
-        <md-list-item (click)="select(record)" style="height: 100%;">
-          <img md-list-avatar [src]="record.logo" alt="...">
-          <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
-            {{record.name}}
-          </h3>
-          <app-progress-bar md-line [level]="record.level"></app-progress-bar>
-          <div md-line *ngIf="record === selectedRecord">
-            <p class="more-info" [class.text-wrapping]="record === selectedRecord">
-              {{record.description}}
-            </p>
-          </div>
-        </md-list-item>
-        <md-divider></md-divider>
-      </div>
-    </md-list>
+  <div *ngIf="spinner$ | async" class="spinner-container">
+    <md-progress-spinner
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+    ></md-progress-spinner>
   </div>
 
+  <div *ngIf="!(spinner$ | async)">
+    <div  *ngFor="let group of groups$ | async">
+      <div class="group-header">
+        <span>{{group.name}}</span>
+      </div>
+      <md-list>
+        <div *ngFor="let record of group.skills">
+          <md-list-item (click)="select(record)" style="height: 100%;">
+            <img md-list-avatar [src]="record.logo" alt="...">
+            <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
+              {{record.name}}
+            </h3>
+            <app-progress-bar md-line [level]="record.level"></app-progress-bar>
+            <div md-line *ngIf="record === selectedRecord">
+              <p class="more-info" [class.text-wrapping]="record === selectedRecord">
+                {{record.description}}
+              </p>
+            </div>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-list>
+    </div>
+  </div>
 
 </div>

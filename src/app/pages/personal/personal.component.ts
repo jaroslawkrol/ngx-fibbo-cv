@@ -13,11 +13,13 @@ import * as fromRoot from '../../reducers/root.reducer';
 export class PersonalComponent implements OnInit {
 
   records$: Observable<PersonalRecord[]>;
+  spinner$: Observable<boolean>;
 
   selectedRecord: PersonalRecord = null;
 
   constructor(store: Store<fromRoot.State>) {
     this.records$ = store.select(fromRoot.getPersonalRecords);
+    this.spinner$ = store.select(fromRoot.getPersonalSpinner);
   }
 
   ngOnInit() {

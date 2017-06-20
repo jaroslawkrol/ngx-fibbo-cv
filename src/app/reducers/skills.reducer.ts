@@ -7,7 +7,7 @@ export interface State {
 }
 
 const initialState: State = {
-  spinner: false,
+  spinner: true,
   skillsGroups: []
 };
 

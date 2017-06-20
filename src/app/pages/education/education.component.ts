@@ -13,15 +13,17 @@ import {Observable} from "rxjs/Observable";
 export class EducationComponent implements OnInit {
 
   records$: Observable<EducationRecord[]>;
+  spinner$: Observable<boolean>;
 
   selectedRecord: EducationRecord = null;
 
-  select(record: EducationRecord) {
-    this.selectedRecord = record;
-  }
-
   constructor(private store: Store<fromRoot.State>) {
     this.records$ = store.select(fromRoot.getEducationRecords);
+    this.spinner$ = store.select(fromRoot.getEducationSpinner);
+  }
+
+  select(record: EducationRecord) {
+    this.selectedRecord = record;
   }
 
   ngOnInit() {

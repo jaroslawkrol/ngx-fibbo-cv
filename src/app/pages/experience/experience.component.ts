@@ -13,11 +13,13 @@ import * as fromRoot from '../../reducers/root.reducer'
 export class ExperienceComponent implements OnInit {
 
   records$: Observable<ExperienceRecord[]>;
+  spinner$: Observable<boolean>;
 
   selectedRecord: ExperienceRecord = null;
 
   constructor(store: Store<fromRoot.State>) {
     this.records$ = store.select(fromRoot.getExperienceRecords);
+    this.spinner$ = store.select(fromRoot.getExperienceSpinner);
   }
 
   ngOnInit() {

@@ -1,21 +1,30 @@
-<div class="personal">
+<div class="page personal">
   <app-subheader [title]="'Osobiste'"></app-subheader>
 
-  <md-list>
-    <div *ngFor="let record of records$ | async">
-      <md-list-item (click)="select(record)">
-        <img md-list-avatar [src]="record.logo" alt="...">
-        <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
-          {{record.name}}
-        </h3>
-        <div md-line *ngIf="record === selectedRecord">
-          <p class="more-info" [class.text-wrapping]="record === selectedRecord">
-            {{record.description}}
-          </p>
-        </div>
-      </md-list-item>
-      <md-divider></md-divider>
-    </div>
-  </md-list>
+  <div *ngIf="spinner$ | async" class="spinner-container">
+    <md-progress-spinner
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+    ></md-progress-spinner>
+  </div>
+
+  <div *ngIf="!(spinner$ | async)">
+    <md-list>
+      <div *ngFor="let record of records$ | async">
+        <md-list-item (click)="select(record)">
+          <img md-list-avatar [src]="record.logo" alt="...">
+          <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
+            {{record.name}}
+          </h3>
+          <div md-line *ngIf="record === selectedRecord">
+            <p class="more-info" [class.text-wrapping]="record === selectedRecord">
+              {{record.description}}
+            </p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+      </div>
+    </md-list>
+  </div>
 
 </div>

@@ -23,7 +23,7 @@ export class SkillsEffects {
     .startWith(new skills.LoadAction())
     .switchMap(() => {
       return this.skillsService.getGroups()
-        .map(groups => new skills.LoadSuccessAction(groups))
+        .map((groups) => new skills.LoadSuccessAction(groups))
         .catch(() => of(new skills.LoadSuccessAction([])));
     });
 

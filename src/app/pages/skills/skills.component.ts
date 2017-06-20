@@ -14,11 +14,13 @@ import {Observable} from "rxjs/Observable";
 export class SkillsComponent implements OnInit {
 
   groups$: Observable<SkillsGroup[]>;
+  spinner$: Observable<boolean>;
 
   selectedRecord: SkillRecord = null;
 
   constructor(store: Store<fromRoot.State>) {
     this.groups$ = store.select(fromRoot.getSkillsGroup);
+    this.spinner$ = store.select(fromRoot.getSkillsSpinner);
   }
 
   ngOnInit() {

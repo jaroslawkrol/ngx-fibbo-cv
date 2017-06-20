@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+.page {
+  height: calc(100% - 28px);
+}
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
