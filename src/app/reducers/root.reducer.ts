@@ -53,19 +53,23 @@ export const getEducationState = (state: State) => state.education;
 
 export const getEducationSpinner = createSelector(getEducationState, fromEducation.getSpinner);
 export const getEducationRecords = createSelector(getEducationState, fromEducation.getEducationRecords);
+export const getSelectedEducationRecord = createSelector(getEducationState, fromEducation.getSelectedRecord);
 
 export const getExperienceState = (state: State) => state.experience;
 
 export const getExperienceSpinner = createSelector(getExperienceState, fromExperience.getSpinner);
 export const getExperienceRecords = createSelector(getExperienceState, fromExperience.getExperienceRecords);
+export const getSelectedExperienceRecord = createSelector(getExperienceState, fromExperience.getSelectedRecord);
 
 export const getSkillsState = (state: State) => state.skills;
 
 export const getSkillsSpinner = createSelector(getSkillsState, fromSkills.getSpinner);
 export const getSkillsGroup = createSelector(getSkillsState, fromSkills.getSkillsGroups);
+export const getSelectedSkillRecord = createSelector(getSkillsState, fromSkills.getSelectedRecord);
 
 export const getPersonalState = (state: State) => state.personal;
 
 export const getPersonalSpinner = createSelector(getPersonalState, fromPersonal.getSpinner);
 export const getPersonalRecords = createSelector(getPersonalState, fromPersonal.getPersonalRecords);
+export const getSelectedPersonalRecord = createSelector(getPersonalState, fromPersonal.getSelectedRecord);
 

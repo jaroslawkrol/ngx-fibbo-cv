@@ -16,11 +16,11 @@
           <h2 md-line>
             {{record.range}}
           </h2>
-          <h3 md-line class="title" [class.text-wrapping]="record === selectedRecord">
+          <h3 md-line class="title" [class.text-wrapping]="record === (selectedRecord$ | async)">
             {{record.name}}
           </h3>
-          <div md-line *ngIf="record === selectedRecord">
-            <p class="more-info" [class.text-wrapping]="record === selectedRecord">
+          <div md-line *ngIf="record === (selectedRecord$ | async)">
+            <p class="more-info" [class.text-wrapping]="record === (selectedRecord$ | async)">
               {{record.description}}
             </p>
           </div>

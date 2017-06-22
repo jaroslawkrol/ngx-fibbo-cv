@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
 
 import * as fromRoot from '../../reducers/root.reducer';
+import * as personalActions from '../../actions/personal.actions';
 
 @Component({
   selector: 'app-personal',
@@ -14,11 +15,11 @@ export class PersonalComponent implements OnInit {
 
   records$: Observable<PersonalRecord[]>;
   spinner$: Observable<boolean>;
+  selectedRecord$: Observable<PersonalRecord>;
 
-  selectedRecord: PersonalRecord = null;
-
-  constructor(store: Store<fromRoot.State>) {
+  constructor(private store: Store<fromRoot.State>) {
     this.records$ = store.select(fromRoot.getPersonalRecords);
+    this.selectedRecord$ = store.select(fromRoot.getSelectedPersonalRecord);
     this.spinner$ = store.select(fromRoot.getPersonalSpinner);
   }
 
@@ -26,7 +27,6 @@ export class PersonalComponent implements OnInit {
   }
 
   select(record: PersonalRecord) {
-    this.selectedRecord = record;
+    this.store.dispatch(new personalActions.SelectItemAction(record));
   }
-
 }

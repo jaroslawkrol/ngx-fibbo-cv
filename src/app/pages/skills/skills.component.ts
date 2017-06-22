@@ -4,6 +4,8 @@ import {SkillRecord} from "../../models/skill-record";
 import {Store} from "@ngrx/store";
 
 import * as fromRoot from '../../reducers/root.reducer';
+import * as skillActions from '../../actions/skills.actions';
+
 import {Observable} from "rxjs/Observable";
 
 @Component({
@@ -14,12 +16,12 @@ import {Observable} from "rxjs/Observable";
 export class SkillsComponent implements OnInit {
 
   groups$: Observable<SkillsGroup[]>;
+  selectedRecord$: Observable<SkillRecord>;
   spinner$: Observable<boolean>;
 
-  selectedRecord: SkillRecord = null;
-
-  constructor(store: Store<fromRoot.State>) {
+  constructor(private store: Store<fromRoot.State>) {
     this.groups$ = store.select(fromRoot.getSkillsGroup);
+    this.selectedRecord$ = store.select(fromRoot.getSelectedSkillRecord);
     this.spinner$ = store.select(fromRoot.getSkillsSpinner);
   }
 
@@ -27,7 +29,7 @@ export class SkillsComponent implements OnInit {
   }
 
   select(record: SkillRecord) {
-    this.selectedRecord = record;
+    this.store.dispatch(new skillActions.SelectItemAction(record));
   }
 
 }

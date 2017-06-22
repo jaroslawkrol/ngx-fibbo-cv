@@ -3,7 +3,8 @@ import {ExperienceRecord} from "../../models/experience-record";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs/Observable";
 
-import * as fromRoot from '../../reducers/root.reducer'
+import * as fromRoot from '../../reducers/root.reducer';
+import * as experienceActions from '../../actions/experience.actions';
 
 @Component({
   selector: 'app-experience',
@@ -13,12 +14,12 @@ import * as fromRoot from '../../reducers/root.reducer'
 export class ExperienceComponent implements OnInit {
 
   records$: Observable<ExperienceRecord[]>;
+  selectedRecord$: Observable<ExperienceRecord>;
   spinner$: Observable<boolean>;
 
-  selectedRecord: ExperienceRecord = null;
-
-  constructor(store: Store<fromRoot.State>) {
+  constructor(private store: Store<fromRoot.State>) {
     this.records$ = store.select(fromRoot.getExperienceRecords);
+    this.selectedRecord$ = store.select(fromRoot.getSelectedExperienceRecord);
     this.spinner$ = store.select(fromRoot.getExperienceSpinner);
   }
 
@@ -26,6 +27,6 @@ export class ExperienceComponent implements OnInit {
   }
 
   select(record: ExperienceRecord) {
-    this.selectedRecord = record;
+    this.store.dispatch(new experienceActions.SelectItemAction(record));
   }
 }
