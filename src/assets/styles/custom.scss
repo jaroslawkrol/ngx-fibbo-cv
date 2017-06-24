@@ -25,3 +25,9 @@ $theme: mat-light-theme($primary, $accent);
 .mat-list, .mat-nav-list {
   padding-top: 0 !important;
 }
+
+@media only screen and (min-width: 480px)  {
+  app-subheader {
+    display: none;
+  }
+}
