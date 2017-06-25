@@ -1,6 +1,6 @@
 .footer-container {
   border-radius: 2px;
-  box-shadow: 0 -10px 20px rgba(0,0,0,0.19), 0 -6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .footer-toolbar {
@@ -8,15 +8,79 @@
   height: 100px;
 }
 
-@media only screen  and (min-width : 1200px) and (max-width : 1823px) {
+@media only screen  and (min-width: 1200px) and (max-width: 1823px) {
   .footer-toolbar {
     height: 72px;
   }
 }
 
+.mat-toolbar-row {
+  justify-content: center;
+}
+
+.footer {
+  flex-basis: 62%;
+  display: flex;
+  margin: auto;
+}
+
+@media only screen  and (max-width: 767px) {
+  .footer {
+    display: none;
+  }
+}
+
+.copyright-container {
+  flex: 62%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+@media only screen  and (max-width: 767px) {
+  .copyright-container {
+    display: none;
+  }
+}
+
+.copyright {
+  font-size: 0.65em;
+  text-align: right;
+  margin-right: 3rem;
+}
+
+.social-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media only screen  and (max-width: 767px) {
+  .social-buttons {
+    justify-content: space-around;
+  }
+}
+
 .footer-icon {
-  text-align: center;
-  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+}
+
+@media only screen  and (max-width: 1199px) {
+  .footer-icon {
+    margin: 0 1rem;
+  }
+}
+
+@media only screen  and (min-width: 1200px) {
+  .footer-icon {
+    margin: 0 2rem;
+  }
 }
 
 .footer-icon > i {
