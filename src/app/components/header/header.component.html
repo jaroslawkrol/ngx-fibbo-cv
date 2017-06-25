@@ -1,8 +1,18 @@
 <div class="header-container">
   <md-toolbar color="primary">
-    <i *ngIf="isHomepage$ | async" class="fa fa-info"></i>
-    <i *ngIf="!(isHomepage$ | async)" (click)="goToDashboard()" class="fa fa-arrow-left"></i>
+    <div *ngIf="isHomepage$ | async" class="icon-container icon-info">
+      <i class="fa fa-info"></i>
+    </div>
+    <div *ngIf="!(isHomepage$ | async)" class="icon-container icon-home" (click)="goToDashboard()">
+      <i class="fa fa-home"></i>
+      <i class="fa fa-arrow-left"></i>
+    </div>
+
     <span align="center" style="flex: 1 1 auto;">Jarosław Król</span>
-    <i class="fa fa-user-circle" (click)="openProfile()"></i>
+
+    <div class="icon-container icon-profile">
+      <i class="fa fa-user-circle" (click)="openProfile()"></i>
+    </div>
+
   </md-toolbar>
 </div>

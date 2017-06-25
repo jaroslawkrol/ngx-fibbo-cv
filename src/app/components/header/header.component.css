@@ -1,4 +1,36 @@
 .header-container {
   border-radius: 2px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.19), 0 2px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.19), 0 2px 6px rgba(0, 0, 0, 0.23);
+}
+
+.icon-container {
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1200px) {
+  .icon-info > i {
+    display: none;
+  }
+
+
+  .icon-home > .fa-arrow-left {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .icon-home > .fa-home {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-profile > i {
+    display: none;
+  }
 }
