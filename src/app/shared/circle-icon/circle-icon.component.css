@@ -14,3 +14,14 @@ span:hover .circle-icon {
 .secondary-color {
   color: #ffffff;
 }
+
+.circle-size {
+  font-size: 5em;
+}
+
+@media only screen  and (min-width : 1200px) and (max-width : 1823px) {
+  .circle-size {
+    font-size: 3.5em;
+  }
+}
+

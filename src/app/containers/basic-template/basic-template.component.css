@@ -32,6 +32,12 @@
   flex-direction: row;
 }
 
+@media only screen  and (min-width : 1200px) and (max-width : 1823px) {
+  .content {
+    height: calc(100vh - 64px - 72px);
+  }
+}
+
 .static-profile {
   display: flex;
   flex-direction: column;
@@ -43,16 +49,41 @@
 .curtain {
 }
 
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation {
+  flex-basis: 38%;
+  border-right: solid 2px gray;
+}
+
+@media only screen and (max-width: 1199px) {
+  .navigation {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.router-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
 /*about me*/
 @media only screen and (min-width: 768px) {
 
   .content {
     top: 64px;
-  }
-
-  .main-content {
-    flex: 1;
-    overflow-y: auto;
   }
 
   .profile-container {
@@ -104,7 +135,13 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+  }
 
+  @media only screen  and (min-width : 1200px) and (max-width : 1823px) {
+    .more-info {
+      font-size: 0.8em;
+      font-weight: 600;
+    }
   }
 
   .info-tag {
@@ -156,10 +193,6 @@
 @media only screen and (max-width: 767px) {
   .static-profile {
     display: none !important;
-  }
-
-  .main-content {
-    flex: 1;
   }
 }
 

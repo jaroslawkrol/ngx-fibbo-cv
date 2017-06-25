@@ -51,7 +51,12 @@
         </div>
     </div>
     <div class="main-content">
-      <router-outlet></router-outlet>
+      <div class="navigation">
+        <app-navigation></app-navigation>
+      </div>
+      <div class="router-container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
   <app-footer class="footer"></app-footer>

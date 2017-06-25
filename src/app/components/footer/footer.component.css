@@ -8,6 +8,12 @@
   height: 100px;
 }
 
+@media only screen  and (min-width : 1200px) and (max-width : 1823px) {
+  .footer-toolbar {
+    height: 72px;
+  }
+}
+
 .footer-icon {
   text-align: center;
   flex: 1 1 auto;

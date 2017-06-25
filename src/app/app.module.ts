@@ -18,6 +18,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 
 import * as fromRoot from './reducers/root.reducer';
 import {RouterEffects} from "./effects/router.effects";
+import { NavigationComponent } from './components/navigation/navigation.component';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import {RouterEffects} from "./effects/router.effects";
     BasicTemplateComponent,
     HeaderComponent,
     FooterComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SharedModule,
     AppRoutingModule,
     DashboardModule,
+
     MaterialModule,
     BrowserAnimationsModule,
     StoreModule.provideStore(fromRoot.reducer),
