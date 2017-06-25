@@ -13,7 +13,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px 0;
+  /*padding: 10px 0;*/
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .icons-pair {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 768px) and (orientation: landscape) {
@@ -27,5 +33,11 @@
     flex-direction: column;
     align-items: center;
     padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  app-circle-icon {
+    margin: 1rem;
   }
 }
