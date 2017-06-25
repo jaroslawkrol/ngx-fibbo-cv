@@ -49,6 +49,7 @@
     "karma-coverage-istanbul-reporter": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "ngrx-store-freeze": "^0.1.9",
+    "ngx-perfect-scrollbar": "^4.4.0",
     "node-sass": "^4.5.3",
     "protractor": "~5.1.0",
     "ts-node": "3.0.6",

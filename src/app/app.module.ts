@@ -20,6 +20,7 @@ import * as fromRoot from './reducers/root.reducer';
 import {RouterEffects} from "./effects/router.effects";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {SharedModule} from "./shared/shared.module";
+import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {SharedModule} from "./shared/shared.module";
     SharedModule,
     AppRoutingModule,
     DashboardModule,
-
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     MaterialModule,
     BrowserAnimationsModule,
     StoreModule.provideStore(fromRoot.reducer),
