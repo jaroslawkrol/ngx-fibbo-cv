@@ -14,7 +14,7 @@
         <span>{{group.name}}</span>
       </div>
       <md-list>
-        <div *ngFor="let record of group.skills">
+        <div *ngFor="let record of group.skills" [class.selected]="record === (selectedRecord$ | async)">
           <md-list-item (click)="select(record)" style="height: 100%;">
             <img md-list-avatar [src]="'/assets/img/' + record.logo" alt="...">
             <h3 md-line class="title" [class.text-wrapping]="record === (selectedRecord$ | async)">

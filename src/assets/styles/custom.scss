@@ -36,3 +36,15 @@ $theme: mat-light-theme($primary, $accent);
 .mat-list .mat-list-item .mat-list-avatar, .mat-nav-list .mat-list-item .mat-list-avatar {
   border-radius: 0% !important;
 }
+
+.mat-list-item-content {
+  cursor: pointer;
+}
+
+.mat-list-item-content:hover {
+  background-color: lightgray;
+}
+
+.selected .mat-list-item-content {
+  cursor: default;
+}
