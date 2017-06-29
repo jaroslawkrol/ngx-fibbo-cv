@@ -8,6 +8,7 @@ import {MaterialModule} from "@angular/material";
 import {EffectsModule} from "@ngrx/effects";
 import {PersonalEffects} from "../../effects/personal.effects";
 import {PersonalService} from "../../services/personal.service";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {PersonalService} from "../../services/personal.service";
     PersonalRoutingModule,
     MaterialModule,
     SharedModule,
+    PerfectScrollbarModule.forChild(),
     EffectsModule.run(PersonalEffects)
   ],
   declarations: [PersonalComponent],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,26 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
 
   ngOnInit() {
   }
 
-  stackoverflow() {
+  stackoverflow(event: any) {
+    this.animate(event);
     this.redirect(Redirect.STACKOVERFLOW);
   }
 
-  linkedin() {
+  linkedin(event: any) {
+    this.animate(event);
     this.redirect(Redirect.LINKEDIN);
   }
 
-  github() {
+  github(event: any) {
+    this.animate(event);
     this.redirect(Redirect.GITHUB);
   }
 
   private redirect(url: string) {
     window.location.href = url;
+  }
+
+  private animate(event: any) {
+    this.renderer.addClass(event.target, 'tada');
   }
 }
 

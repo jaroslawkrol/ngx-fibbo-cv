@@ -48,6 +48,7 @@ export const getLayoutProfileOpened = createSelector(getLayoutState, fromLayout.
 export const getRouterState = (state: State) => state.router;
 
 export const getRouterIsHomepage = createSelector(getRouterState, fromRouter.getHomepage);
+export const getRouterCurrent = createSelector(getRouterState, fromRouter.getCurrent);
 
 export const getEducationState = (state: State) => state.education;
 

@@ -1,18 +1,24 @@
 import {Action} from '@ngrx/store'
 
-export interface State {
-  isHomepage: boolean;
-}
-
-const initialState: State = {
-  isHomepage: true
-};
-
 export const CHECK_CURRENT_PAGE = 'CHECK_CURRENT_PAGE';
 export const HOMEPAGE = 'HOMEPAGE';
+export const EDUCATION = 'EDUCATION';
+export const EXPERIENCE = 'EXPERIENCE';
+export const SKILLS = 'SKILLS';
+export const PERSONAL = 'PERSONAL';
 export const OTHER_PAGE = 'OTHER_PAGE';
 
 export const RESET = 'RESET';
+
+export interface State {
+  isHomepage: boolean;
+  current: string;
+}
+
+const initialState: State = {
+  isHomepage: true,
+  current: HOMEPAGE
+};
 
 export function reducer(state: any = initialState, action: Action): any {
   switch (action.type) {
@@ -20,10 +26,14 @@ export function reducer(state: any = initialState, action: Action): any {
       return state;
 
     case HOMEPAGE:
-      return Object.assign({}, state, { isHomepage: true });
+      return Object.assign({}, state, { isHomepage: true, current: HOMEPAGE });
 
+    case EDUCATION:
+    case EXPERIENCE:
+    case SKILLS:
+    case PERSONAL:
     case OTHER_PAGE:
-      return Object.assign({}, state, { isHomepage: false });
+      return Object.assign({}, state, { isHomepage: false, current: action.type });
 
     default:
       return state;
@@ -31,4 +41,5 @@ export function reducer(state: any = initialState, action: Action): any {
 }
 
 export const getHomepage = (state: State) => state.isHomepage;
+export const getCurrent = (state: State) => state.current;
 

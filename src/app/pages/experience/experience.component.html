@@ -1,4 +1,4 @@
-<div class="page experience">
+<div perfect-scrollbar class="page experience">
   <app-subheader [title]="'Doświadczenie'"></app-subheader>
 
   <div *ngIf="spinner$ | async" class="spinner-container">
@@ -12,7 +12,7 @@
     <md-list>
       <div *ngFor="let record of records$ | async">
         <md-list-item (click)="select(record)">
-          <img md-list-avatar [src]="record.logo" alt="...">
+          <img md-list-avatar [src]="'/assets/img/' + record.logo" alt="...">
           <h2 md-line>
             {{record.range}}
           </h2>

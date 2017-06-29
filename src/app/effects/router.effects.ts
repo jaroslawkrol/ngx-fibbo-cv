@@ -28,19 +28,31 @@ export class RouterEffects {
     .startWith(new routerActions.CheckCurrentPageAction())
     .switchMap(() => {
       let action: any;
-      if (this.checkIfHomepage()) {
-        action = new routerActions.HomePageAction();
-      } else {
-        action = new routerActions.OtherPageAction();
+      switch (this.location) {
+        case '':
+        case '/':
+        case '/dashboard':
+          action = new routerActions.HomePageAction();
+          break;
+        case '/education':
+          action = new routerActions.EducationPageAction();
+          break;
+        case '/experience':
+          action = new routerActions.ExperiencePageAction();
+          break;
+        case '/skills':
+          action = new routerActions.SkillsPageAction();
+          break;
+        case '/personal':
+          action = new routerActions.PersonalPageAction();
+          break;
+        default:
+          action = new routerActions.OtherPageAction();
       }
       return of(action);
     });
 
   constructor(private actions$: Actions, location: Location) {
     this.location = location.path();
-  }
-
-  private checkIfHomepage(): boolean {
-    return !(HOMEPAGE_URLS.indexOf(this.location) < 0);
   }
 }

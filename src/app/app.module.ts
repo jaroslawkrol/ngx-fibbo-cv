@@ -1,24 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AppRoutingModule } from './app-routing.module';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { MaterialModule } from "@angular/material";
+import {MaterialModule} from "@angular/material";
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {EffectsModule} from "@ngrx/effects";
-import { BasicTemplateComponent } from './containers/basic-template/basic-template.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { DashboardModule } from './pages/dashboard/dashboard.module';
-import { AboutMeComponent } from './components/about-me/about-me.component';
+import {BasicTemplateComponent} from './containers/basic-template/basic-template.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {DashboardModule} from './pages/dashboard/dashboard.module';
+import {AboutMeComponent} from './components/about-me/about-me.component';
 
 import * as fromRoot from './reducers/root.reducer';
 import {RouterEffects} from "./effects/router.effects";
-import { NavigationComponent } from './components/navigation/navigation.component';
 import {SharedModule} from "./shared/shared.module";
 import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
@@ -28,8 +27,7 @@ import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule} from "ngx-perfect-scro
     BasicTemplateComponent,
     HeaderComponent,
     FooterComponent,
-    AboutMeComponent,
-    NavigationComponent
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,4 +48,5 @@ import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule} from "ngx-perfect-scro
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

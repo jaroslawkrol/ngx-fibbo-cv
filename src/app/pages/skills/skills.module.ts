@@ -8,6 +8,7 @@ import {MaterialModule} from "@angular/material";
 import {SkillsService} from "../../services/skills.service";
 import {EffectsModule} from "@ngrx/effects";
 import {SkillsEffects} from "../../effects/skills.effects";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {SkillsEffects} from "../../effects/skills.effects";
     SharedModule,
     MaterialModule,
     SkillsRoutingModule,
+    PerfectScrollbarModule.forChild(),
     EffectsModule.run(SkillsEffects)
   ],
   declarations: [SkillsComponent],

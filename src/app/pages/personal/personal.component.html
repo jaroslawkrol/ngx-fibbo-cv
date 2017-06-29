@@ -1,4 +1,4 @@
-<div class="page personal">
+<div perfect-scrollbar class="page personal">
   <app-subheader [title]="'Osobiste'"></app-subheader>
 
   <div *ngIf="spinner$ | async" class="spinner-container">
@@ -12,7 +12,7 @@
     <md-list>
       <div *ngFor="let record of records$ | async">
         <md-list-item (click)="select(record)">
-          <img md-list-avatar [src]="record.logo" alt="...">
+          <img md-list-avatar [src]="'/assets/img/' + record.logo" alt="...">
           <h3 md-line class="title" [class.text-wrapping]="record === (selectedRecord$ | async)">
             {{record.name}}
           </h3>

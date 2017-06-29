@@ -1,4 +1,4 @@
-<div class="page skills">
+<div perfect-scrollbar class="page skills">
   <app-subheader [title]="'Umiejętności'"></app-subheader>
 
   <div *ngIf="spinner$ | async" class="spinner-container">
@@ -16,7 +16,7 @@
       <md-list>
         <div *ngFor="let record of group.skills">
           <md-list-item (click)="select(record)" style="height: 100%;">
-            <img md-list-avatar [src]="record.logo" alt="...">
+            <img md-list-avatar [src]="'/assets/img/' + record.logo" alt="...">
             <h3 md-line class="title" [class.text-wrapping]="record === (selectedRecord$ | async)">
               {{record.name}}
             </h3>

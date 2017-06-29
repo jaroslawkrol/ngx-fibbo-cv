@@ -8,6 +8,7 @@ import {MaterialModule} from "@angular/material";
 import {EffectsModule} from "@ngrx/effects";
 import {EducationEffects} from "../../effects/education.effects";
 import {EducationService} from "../../services/education.service";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {EducationService} from "../../services/education.service";
     SharedModule,
     MaterialModule,
     EducationRoutingModule,
+    PerfectScrollbarModule.forChild(),
     EffectsModule.run(EducationEffects)
   ],
   declarations: [EducationComponent],

@@ -1,7 +1,7 @@
 <div class="basic-template">
-  <app-header class="header"></app-header>
+  <app-header class="header slideInDown"></app-header>
   <div class="content">
-    <div class="static-profile" style="">
+    <div class="static-profile fadeInLeftBig">
         <div class="curtain">
           <div class="about-me">
             <div class="profile-container">
@@ -38,7 +38,7 @@
 
               <div class="info-tag">
                 <div class="key"><i class="fa fa-phone"></i></div>
-                <div class="value"><a href="tel:+48516768983">+48 516 768 983</a></div>
+                <div class="value"><a href="tel:+48516768983" alt="sito dell'Istituto Ancel Keys" >+48 516 768 983</a></div>
               </div>
 
               <div class="info-tag">
@@ -54,11 +54,11 @@
       <div class="navigation">
         <app-navigation></app-navigation>
       </div>
-      <div perfect-scrollbar class="router-container">
+      <div class="router fadeInRightBig">
         <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-  <app-footer class="footer"></app-footer>
+  <app-footer class="footer slideInUp"></app-footer>
 </div>
 <app-about-me *ngIf="isProfileVisible$ | async"></app-about-me>

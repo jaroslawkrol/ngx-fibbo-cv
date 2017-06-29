@@ -15,6 +15,16 @@ span:hover .circle-icon {
   color: #ffffff;
 }
 
+.active > i.primary-color {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.active > i.secondary-color {
+  color: #0d47a1 !important;
+}
+
+
 .circle-size {
   font-size: 5em;
 }

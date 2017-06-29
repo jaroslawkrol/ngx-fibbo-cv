@@ -8,6 +8,7 @@ import {MaterialModule} from "@angular/material";
 import {EffectsModule} from "@ngrx/effects";
 import {ExperienceEffects} from "../../effects/experience.effects";
 import {ExperienceService} from "../../services/experience.service";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {ExperienceService} from "../../services/experience.service";
     ExperienceRoutingModule,
     MaterialModule,
     SharedModule,
+    PerfectScrollbarModule.forChild(),
     EffectsModule.run(ExperienceEffects)
   ],
   declarations: [ExperienceComponent],

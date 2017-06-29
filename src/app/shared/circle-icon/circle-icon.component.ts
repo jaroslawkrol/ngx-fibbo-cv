@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CircleIconComponent implements OnInit {
 
   @Input() fontawesome: string;
+  @Input() active: boolean;
 
   constructor() { }
 

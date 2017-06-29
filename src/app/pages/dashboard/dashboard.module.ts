@@ -11,6 +11,7 @@ import {SharedModule} from "../../shared/shared.module";
     SharedModule,
     DashboardRoutingModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent],
+  exports: []
 })
 export class DashboardModule { }
