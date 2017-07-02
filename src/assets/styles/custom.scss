@@ -41,10 +41,12 @@ $theme: mat-light-theme($primary, $accent);
   cursor: pointer;
 }
 
-.mat-list-item-content:hover {
-  background-color: lightgray;
-}
-
 .selected .mat-list-item-content {
   cursor: default;
+}
+
+@media only screen and (min-width: 1200px) {
+  .mat-list-item-content:hover {
+    background-color: rgba(211, 211, 211, 0.4);
+  }
 }

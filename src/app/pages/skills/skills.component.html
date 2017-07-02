@@ -20,7 +20,7 @@
             <h3 md-line class="title" [class.text-wrapping]="record === (selectedRecord$ | async)">
               {{record.name}}
             </h3>
-            <app-progress-bar md-line [level]="record.level"></app-progress-bar>
+            <app-progress-bar md-line [level]="record.level" [color]="record.color"></app-progress-bar>
             <div md-line *ngIf="record === (selectedRecord$ | async)">
               <p class="more-info" [class.text-wrapping]="record === (selectedRecord$ | async)">
                 {{record.description}}
