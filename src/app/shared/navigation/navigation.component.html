@@ -2,12 +2,12 @@
   <app-subheader [title]="'CV'"></app-subheader>
   <div class="icons-container">
     <div class="icons-pair">
-      <app-circle-icon [active]="(current$ | async) === 'EDUCATION'" [fontawesome]="'fa-graduation-cap'" (click)="toEducationPage()" class="zoomIn"></app-circle-icon>
-      <app-circle-icon [active]="(current$ | async) === 'EXPERIENCE'" [fontawesome]="'fa-briefcase'" (click)="toExperiencePage()" class="zoomIn second"></app-circle-icon>
+      <app-circle-icon mdTooltip="Wykształcenie" [mdTooltipPosition]="'right'" [active]="(current$ | async) === 'EDUCATION'" [fontawesome]="'fa-graduation-cap'" (click)="toEducationPage()" class="zoomIn"></app-circle-icon>
+      <app-circle-icon mdTooltip="Doświadczenie" [mdTooltipPosition]="'right'" [active]="(current$ | async) === 'EXPERIENCE'" [fontawesome]="'fa-briefcase'" (click)="toExperiencePage()" class="zoomIn second"></app-circle-icon>
     </div>
     <div class="icons-pair">
-      <app-circle-icon [active]="(current$ | async) === 'SKILLS'" [fontawesome]="'fa-bar-chart'" (click)="toSkillsPage()" class="zoomIn third"></app-circle-icon>
-      <app-circle-icon [active]="(current$ | async) === 'PERSONAL'" [fontawesome]="'fa-male'" (click)="toPersonalPage()" class="zoomIn fourth"></app-circle-icon>
+      <app-circle-icon mdTooltip="Umiejętności" [mdTooltipPosition]="'right'" [active]="(current$ | async) === 'SKILLS'" [fontawesome]="'fa-bar-chart'" (click)="toSkillsPage()" class="zoomIn third"></app-circle-icon>
+      <app-circle-icon mdTooltip="Osobiste" [mdTooltipPosition]="'right'" [active]="(current$ | async) === 'PERSONAL'" [fontawesome]="'fa-male'" (click)="toPersonalPage()" class="zoomIn fourth"></app-circle-icon>
     </div>
   </div>
 </div>
