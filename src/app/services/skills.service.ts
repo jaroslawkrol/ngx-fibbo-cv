@@ -5,7 +5,7 @@ import {SkillsGroup} from "../models/skills-group";
 
 @Injectable()
 export class SkillsService {
-  private API_PATH = 'https://private-385270-curriculumvitae.apiary-mock.com/skills';
+  private API_PATH = '/api/skills';
 
   constructor(private http: Http) {}
 

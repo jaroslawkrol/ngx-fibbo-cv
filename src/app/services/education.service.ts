@@ -5,7 +5,7 @@ import {EducationRecord} from "../models/education-record";
 
 @Injectable()
 export class EducationService {
-  private API_PATH = 'https://private-385270-curriculumvitae.apiary-mock.com/education';
+  private API_PATH = '/api/education';
 
   constructor(private http: Http) {}
 
