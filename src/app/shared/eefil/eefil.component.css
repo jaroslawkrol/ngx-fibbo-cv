@@ -1,0 +1,28 @@
+.eefil-container {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 2rem 4rem;
+}
+
+.description {
+  font-size: larger;
+}
+
+@media only screen and (max-width: 1200px){
+  .description {
+    font-size: medium;
+  }
+}
+
+.signature {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end
+}
+
+.signature-img {
+  width: 38%;
+  height: 38%;
+}
