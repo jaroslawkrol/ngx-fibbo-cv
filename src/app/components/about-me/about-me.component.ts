@@ -17,8 +17,10 @@ export class AboutMeComponent implements OnInit {
   ngOnInit() {
   }
 
+  @HostListener('window:popstate', ['$event'])
   @HostListener('window:keydown.escape')
-  closeProfile() {
+  closeProfile(event?: any) {
+    event.preventDefault();
     this.store.dispatch(new layoutActions.CloseProfileAction());
   }
 
