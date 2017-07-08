@@ -30,11 +30,11 @@ export class HeaderComponent implements OnInit {
 
   goToDashboard() {
     this.navigateTo(Routing.DASHBOARD);
+    this.store.dispatch(new routerActions.HomePageAction());
   }
 
   private navigateTo(route: string[]) {
     this.router.navigate(route);
-    this.store.dispatch(new routerActions.HomePageAction());
   }
 
 }
