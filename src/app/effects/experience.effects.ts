@@ -23,7 +23,9 @@ export class ExperienceEffects {
     .startWith(new experience.LoadAction())
     .switchMap(() => {
       return this.experienceService.getRecords()
-        .map(records => new experience.LoadSuccessAction(records))
+        .map(records => new experience.LoadSuccessAction(records.sort((record1, record2) => {
+          return record1.position - record2.position;
+        })))
         .catch(() => of(new experience.LoadSuccessAction([])));
     });
 

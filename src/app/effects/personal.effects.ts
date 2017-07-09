@@ -23,7 +23,9 @@ export class PersonalEffects {
     .startWith(new personal.LoadAction())
     .switchMap(() => {
       return this.personalService.getRecords()
-        .map(records => new personal.LoadSuccessAction(records))
+        .map(records => new personal.LoadSuccessAction(records.sort((record1, record2) => {
+          return record1.position - record2.position;
+        })))
         .catch(() => of(new personal.LoadSuccessAction([])));
     });
 

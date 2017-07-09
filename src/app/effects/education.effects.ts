@@ -23,7 +23,9 @@ export class EducationEffects {
     .startWith(new education.LoadAction())
     .switchMap(() => {
       return this.educationService.getRecords()
-        .map(records => new education.LoadSuccessAction(records))
+        .map(records => new education.LoadSuccessAction(records.sort((record1, record2) => {
+          return record1.position - record2.position;
+        })))
         .catch(() => of(new education.LoadSuccessAction([])));
     });
 

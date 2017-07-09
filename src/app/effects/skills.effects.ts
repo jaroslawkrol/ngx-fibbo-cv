@@ -23,7 +23,9 @@ export class SkillsEffects {
     .startWith(new skills.LoadAction())
     .switchMap(() => {
       return this.skillsService.getGroups()
-        .map((groups) => new skills.LoadSuccessAction(groups))
+        .map((groups) => new skills.LoadSuccessAction(groups.sort((group1, group2) => {
+          return group1.position - group2.position;
+        })))
         .catch(() => of(new skills.LoadSuccessAction([])));
     });
 
