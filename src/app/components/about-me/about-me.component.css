@@ -10,6 +10,7 @@
 
 .about-me {
   position: absolute;
+  overflow-y: auto;
   font-family: Roboto;
   top: 0;
   right: 0;
