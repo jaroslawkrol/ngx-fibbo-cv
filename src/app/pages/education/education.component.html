@@ -21,8 +21,7 @@
           </h3>
           <div md-line *ngIf="record === (selectedRecord$ | async)">
             <p class="more-info" [class.text-wrapping]="record === (selectedRecord$ | async)">
-              Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-              rem aperiam eaque ipsa,
+              {{record.description}}
             </p>
           </div>
         </md-list-item>
