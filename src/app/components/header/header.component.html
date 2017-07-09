@@ -1,8 +1,8 @@
 <div class="header-container">
   <md-toolbar color="primary">
-    <div *ngIf="isHomepage$ | async" class="icon-container icon-info">
-      <i class="fa fa-info"></i>
-    </div>
+    <!--<div *ngIf="isHomepage$ | async" class="icon-container icon-info">-->
+      <!--<i class="fa fa-info"></i>-->
+    <!--</div>-->
     <div *ngIf="!(isHomepage$ | async)" class="icon-container icon-home" (click)="goToDashboard()">
       <i class="fa fa-home"></i>
       <i class="fa fa-arrow-left"></i>
