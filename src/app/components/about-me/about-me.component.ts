@@ -20,7 +20,9 @@ export class AboutMeComponent implements OnInit {
   @HostListener('window:popstate', ['$event'])
   @HostListener('window:keydown.escape')
   closeProfile(event?: any) {
-    event.preventDefault();
+    if(event) {
+      event.preventDefault();
+    }
     this.store.dispatch(new layoutActions.CloseProfileAction());
   }
 
