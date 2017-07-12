@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+.scrollable {
+  overflow-y: auto;
+}
+
 .frame {
   width: 180px;
   height: 180px;

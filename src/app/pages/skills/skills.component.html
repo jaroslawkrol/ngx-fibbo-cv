@@ -8,7 +8,7 @@
     ></md-progress-spinner>
   </div>
 
-  <div *ngIf="!(spinner$ | async)">
+  <div class="animated-list" *ngIf="!(spinner$ | async)" >
     <div  *ngFor="let group of groups$ | async">
       <div class="group-header">
         <span>{{group.name}}</span>
