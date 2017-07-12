@@ -1,9 +1,11 @@
-.text-wrapping {
-  white-space: pre-line !important;
+.title {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 600 !important;
 }
 
-.title {
-  font-weight: 600 !important;
+.text-wrapping {
+  white-space: pre-line !important;
 }
 
 .more-info {

@@ -8,7 +8,7 @@
     ></md-progress-spinner>
   </div>
 
-  <div *ngIf="!(spinner$ | async)">
+  <div class="animated-list" *ngIf="!(spinner$ | async)">
     <md-list>
       <div *ngFor="let record of records$ | async" [class.selected]="record === (selectedRecord$ | async)">
         <md-list-item (click)="select(record)">

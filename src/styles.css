@@ -1,5 +1,6 @@
 .page {
   height: calc(100%);
+  max-width: 100vw;
 }
 
 .spinner-container {
@@ -39,5 +40,43 @@
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
+  }
+}
+
+.animated-list {
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .animated-list {
+    -webkit-animation-name: listSlideInDown;
+    animation-name: listSlideInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.75s;
+    animation-delay: 0.75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes listSlideInDown {
+    0% {
+      -webkit-transform: translate(0px, -28px);
+      transform: translate(0px, -28px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+    }
+  }
+  @keyframes listSlideInDown {
+    0% {
+      -webkit-transform: translate(0px, -28px);
+      transform: translate(0px, -28px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+    }
   }
 }
